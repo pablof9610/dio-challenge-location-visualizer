@@ -25,7 +25,7 @@ public class MapServiceImpl implements MapService {
     public void mountImageFromBytes(Endereco endereco) throws IOException {
         String completeAddress = cepService.cepTreatment(endereco);
         System.out.println(completeAddress);
-        byte[] imageBytes = googleMapsService.getStaticMapImage(endereco.toString(),
+        byte[] imageBytes = googleMapsService.getStaticMapImage(completeAddress,
                 15,
                 "600x400",
                 API_KEY);
